@@ -13,7 +13,7 @@ class conexion{
             $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             }catch( PDOException $e){
-            return "falla de conexion".$e;
+            return "falla de connexion".$e;
         }
     }
 
