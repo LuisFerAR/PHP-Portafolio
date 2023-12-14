@@ -21,14 +21,13 @@
     }
     
     if($_GET){
-        //DELETE FROM `proyectos` WHERE `proyectos`.`id` = 9
+        
         $id=$_GET['borrar'];
         $objConexion=new conexion();
        
-        $imagen=$objConexion->consultar("SELECT imagen FROM `proyectos` where id=".$id);
-       // print_r($imagen[0]['imagen']);// IMAGEN EXACTA
-        // unlink("imagenes/".$imagen[0]['imagen']);
-
+        $imagen=$objConexion->consultar("SELECT imagen FROM `proyectos` WHERE id=".$id);
+        unlink("imagenes/".$imagen[0]['imagen']);
+        
         $sql="DELETE FROM `proyectos` WHERE `proyectos`.`id`=".$id;
         $objConexion->ejecutar($sql);
         header("location:portafolio.php");
